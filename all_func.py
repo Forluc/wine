@@ -10,8 +10,8 @@ def get_correct_form_year(year) -> str:
         return 'года' if year % 10 > 1 else 'год'
 
 
-def get_drinks():
-    excel_data_df = pandas.read_excel('test/wine3.xlsx', na_values=['N/A', 'NA'], keep_default_na=False)
+def get_drinks(filepath):
+    excel_data_df = pandas.read_excel(filepath, na_values=['N/A', 'NA'], keep_default_na=False)
 
     grouped_drinks = defaultdict(list)
 
