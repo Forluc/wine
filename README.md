@@ -17,6 +17,10 @@ pip install -r requirements.txt
 
 - Создайте файл с расширением `xlsx`
 - Наполните файл данными
+- Картинки добавлять в папку `images` и прописывать в таблице в формате `name.(расширение)`
+
+Пример:
+![Безымянный2](https://github.com/Forluc/wine/assets/75582238/9ace7603-6b42-44bc-80cd-5b7b1f7ab9d0)
 
 ### Добавление FILEPATH
 
