@@ -10,7 +10,7 @@ import all_func
 
 def main():
     load_dotenv()
-    filepath = os.environ['FILEPATH']
+    filepath = os.getenv('FILEPATH')
 
     parser = argparse.ArgumentParser()
     parser.add_argument('-f', '--filepath', help='Ваш путь к файлу, например example.xlsx или folder/example.xlsx')
