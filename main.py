@@ -13,11 +13,11 @@ def main():
     filepath = os.getenv('FILEPATH')
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('-f', '--filepath', help='Ваш путь к файлу, например example.xlsx или folder/example.xlsx')
+    parser.add_argument('-f', '--filepath', help='Ваш путь к файлу, например example.xlsx или folder/example.xlsx',
+                        default=filepath)
     args = parser.parse_args()
 
-    if args.filepath:
-        filepath = args.filepath
+    filepath = args.filepath
 
     env = Environment(
         loader=FileSystemLoader('.'),
@@ -26,8 +26,10 @@ def main():
 
     template = env.get_template('template.html')
 
+    winery_opening_year = 1920
+    years_since_opening = datetime.datetime.now().year - winery_opening_year
     rendered_page = template.render(
-        winery_age=f'{datetime.datetime.now().year - 1920} {all_func.get_correct_form_year(datetime.datetime.now().year)}',
+        winery_age=f'{years_since_opening} {all_func.get_correct_form_year(years_since_opening)}',
         drinks=all_func.get_drinks(filepath),
     )
 
